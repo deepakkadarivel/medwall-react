@@ -1,21 +1,16 @@
 {
-  "name": "marvin",
-  "version": "0.2.0",
+  "name": "medwall-react",
+  "version": "0.0.1",
   "private": false,
   "license": "MIT",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
-    "client:dev": "webpack-dashboard -t 'Marvin' -- webpack-dev-server",
+    "client:dev": "webpack-dashboard -t 'medwall-react' -- webpack-dev-server",
     "client:watch": "webpack",
     "client:build": "npm run clean && NODE_ENV=\"production\" webpack",
     "client:preview": "npm run clean && NODE_ENV=\"production\" webpack-dev-server",
-    "server:watch": "SERVER_RENDER=\"true\" webpack --config webpack.config.server.js",
-    "server:restart": "nodemon ./build/server.js",
-    "server:build": "SERVER_RENDER=\"true\" NODE_ENV=\"production\" webpack --config webpack.config.server.js",
-    "server:dev": "npm run clean && concurrently --prefix \"[{name}]\" --names \"webpack-server,watch-server\" --kill-others \"npm run server:watch\" \"npm run server:restart\"",
-    "universal:dev": "concurrently --prefix \"[{name}]\" --names \"webpack-server,webpack-client,watch-server\" --kill-others \"npm run server:watch\" \"npm run client:watch\" \"npm run server:restart\"",
-    "universal:build": "npm run client:build && npm run server:build",
+    "universal:build": "npm run client:build",
     "clean": "rm -rf ./build",
     "lint-hook": "eslint ./source/js ./webpack ./*.js -f table --ext .js --ext .jsx",
     "lint": "npm run lint-hook --silent || true",
@@ -37,7 +32,6 @@
     "babel-preset-react-optimize": "^1.0.1",
     "babel-preset-stage-0": "^6.16.0",
     "babel-runtime": "^6.6.1",
-    "concurrently": "^3.4.0",
     "css-loader": "^0.28.4",
     "eslint": "^4.3.0",
     "eslint-config-airbnb": "^15.1.0",
@@ -47,7 +41,6 @@
     "extract-text-webpack-plugin": "^3.0.0",
     "html-webpack-plugin": "^2.24.1",
     "node-sass": "^4.5.3",
-    "nodemon": "^1.11.0",
     "postcss-loader": "^2.0.6",
     "prepush": "^3.1.11",
     "react-hot-loader": "^3.0.0-beta.7",
@@ -62,40 +55,40 @@
     "webpack-dev-server": "^2.6.1"
   },
   "dependencies": {
+    "@blueprintjs/core": "^1.27.0",
     "babel-polyfill": "^6.23.0",
     "es6-promise": "^4.1.1",
     "eslint": "^3.19.0",
-    "express": "^4.15.3",
     "file-loader": "^0.11.2",
+    "flexboxgrid": "^6.3.1",
     "immutable": "^3.8.1",
     "isomorphic-fetch": "^2.2.1",
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
+    "react-addons-css-transition-group": "^15.6.0",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.5",
     "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1",
     "redux": "^3.6.0",
-    "redux-thunk": "^2.2.0",
-    "transit-immutable-js": "^0.7.0",
-    "transit-js": "^0.8.846"
+    "redux-thunk": "^2.2.0"
   },
-  "description": "Starter boilerplate for React and Redux, using Webpack 3",
+  "description": "medwall react app",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/workco/marvin.git"
+    "url": "git+ssh://git@github.com:deepakkadarivel/medwall-react.git"
   },
   "keywords": [
     "react",
     "redux",
     "webpack2",
-    "boilerplate"
+    "medwall"
   ],
-  "author": "Stanko",
+  "author": "Deepak Kadarivel",
   "bugs": {
-    "url": "https://github.com/workco/marvin/issues"
+    "url": "https://github.com/deepakkadarivel/medwall-react/issues"
   },
-  "homepage": "https://github.com/workco/marvin#readme",
+  "homepage": "https://github.com/deepakkadarivel/medwall-react#readme",
   "prepush": [
     "npm run lint-hook --silent"
   ]
