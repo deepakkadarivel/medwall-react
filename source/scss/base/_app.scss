@@ -20,14 +20,28 @@ html {
 body {
   color: $black;
   font-family: $font-family-secondary;
+  padding-top: 50px;
+}
+
+a:hover {
+  color: $black;
+}
+
+a:focus {
+  outline: none;
 }
 
 .App {
-  font-size: 1.8rem;
+  font-size: 1.2rem;
 
   @include md {
   }
 
   @include md {
   }
+}
+
+.justifyCenter {
+  display: flex;
+  justify-content: center;
 }
